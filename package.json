@@ -1,0 +1,45 @@
+{
+  "name": "final_project",
+  "version": "1.0.0",
+  "description": "a simple application for discovering new music",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swainea/new_releases.git"
+  },
+  "author": "Liz Swain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/swainea/new_releases/issues"
+  },
+  "homepage": "https://github.com/swainea/new_releases#readme",
+  "devDependencies": {
+    "angular": "^1.5.5",
+    "angular-mocks": "^1.5.5",
+    "angular-ui-router": "^0.2.18",
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-karma": "^1.0.0",
+    "karma": "^0.13.22",
+    "karma-chai": "^0.1.0",
+    "karma-coverage": "^1.0.0",
+    "karma-mocha": "^1.0.1",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "load-grunt-tasks": "^3.5.0",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.7"
+  },
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-mocks": "^1.5.5",
+    "angular-ui-router": "^0.2.18"
+  }
+}
