@@ -11,7 +11,6 @@
     console.log('in login controller');
 
     this.oAuth = function oAuth (){
-      console.log("inside oAuth");
       var client_id = '76448191f52d4674a641b52162d19c85';
       var redirect_uri = 'http://127.0.0.1:3000/redirect-uri/redirect-uri.template.html';
 
@@ -22,6 +21,7 @@
 
       window.location = url;
     };
+
 
 
   }

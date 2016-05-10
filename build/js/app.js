@@ -4,7 +4,7 @@
   angular
     .module('app', ['ui.router'])
     .config(appConfig);
-  //   // .run(appStartup);
+   // .run(appStartup);
 
   appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -20,10 +20,12 @@
       controllerAs: 'lc'
     })
     .state('redirect',{
-      url: '/redirect-uri',
-      templateUrl: 'redirect-uri/redirect-uri.template.html'
+      url: '/redirect-uri?access_token',
+      templateUrl: 'redirect-uri/redirect-uri.template.html',
+      controller: 'RedirectController',
+      controllerAs: 'rc'
     });
-    
+
     // .state('newReleases',{
     //   url: '/new-releases',
     //   templateUrl: 'new-releases/new-releases.tempate.html',
@@ -48,7 +50,6 @@
     console.log('in login controller');
 
     this.oAuth = function oAuth (){
-      console.log("inside oAuth");
       var client_id = '76448191f52d4674a641b52162d19c85';
       var redirect_uri = 'http://127.0.0.1:3000/redirect-uri/redirect-uri.template.html';
 
@@ -61,9 +62,60 @@
     };
 
 
+
   }
 
 
+}());
+;(function() {
+  'use strict';
+
+  angular
+    .module('app')
+    .controller('RedirectController', RedirectController);
+
+  RedirectController.$inject = ['$state', '$stateParams'];
+
+  function RedirectController ($state, $stateParams){
+    console.log("inside RedirectController");
+    console.log("Access Token ", $stateParams.access_token);
+  }
+
+}());
+;(function() {
+  'use strict';
+
+  angular
+  .module('app')
+  .factory('SpotifyService', SpotifyService);
+
+  SpotifyService.$inject = ['$http'];
+
+  function SpotifyService($http){
+
+    return{
+      newReleases: newReleases
+    };
+
+    function getNewReleases(){
+
+      return $http ({
+        method: 'GET',
+        url: 'https://api.spotify.com/v1/browse/new-releases',
+        headers: {
+          'Authorization': 'Bearer ' + accessToken
+        },
+
+      }).then (function onSuccess(response){
+        console.log(response);
+        return response;
+      }, function error(response){
+        console.log(response);
+      }
+    );
+  }
+
+}
 }());
 
 //# sourceMappingURL=app.js.map

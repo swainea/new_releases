@@ -4,7 +4,7 @@
   angular
     .module('app', ['ui.router'])
     .config(appConfig);
-  //   // .run(appStartup);
+   // .run(appStartup);
 
   appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -20,10 +20,12 @@
       controllerAs: 'lc'
     })
     .state('redirect',{
-      url: '/redirect-uri',
-      templateUrl: 'redirect-uri/redirect-uri.template.html'
+      url: '/redirect-uri?access_token',
+      templateUrl: 'redirect-uri/redirect-uri.template.html',
+      controller: 'RedirectController',
+      controllerAs: 'rc'
     });
-    
+
     // .state('newReleases',{
     //   url: '/new-releases',
     //   templateUrl: 'new-releases/new-releases.tempate.html',

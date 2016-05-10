@@ -5,7 +5,7 @@
     .module('app')
     .controller('NewReleasesController', NewReleasesController);
 
-  NewReleasesController.$inject = [];
+  NewReleasesController.$inject = ['SpotifyService'];
 
   function NewReleasesController(){
 
