@@ -3,29 +3,30 @@
 
   angular
     .module('app', ['ui.router'])
-    .config(appConfig)
-    .run(appStartup);
+    .config(appConfig);
+  //   // .run(appStartup);
 
-  app.Config.$inject = ['$stateProvider', 'urlRouteProvider'];
+  appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-  function appConfig($stateProvider, $urlRouteProvider){
+  function appConfig($stateProvider, $urlRouterProvider){
 
-    $urlRouteProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
     .state('login', {
-      url: '/login',
-      templateUrl: 'login.login.template.html',
+      url: '/',
+      templateUrl: 'login/login.template.html',
       controller: 'LoginController',
       controllerAs: 'lc'
-    })
-    .state('newReleases',{
-      url: '/new-releases',
-      templateUrl: 'new-releases/new-releases.tempate.html',
-      controller: 'NewReleasesController',
-      controllerA: 'nr',
-      secure: true
     });
+
+    // .state('newReleases',{
+    //   url: '/new-releases',
+    //   templateUrl: 'new-releases/new-releases.tempate.html',
+    //   controller: 'NewReleasesController',
+    //   controllerAs: 'nr',
+    //   secure: true
+    // });
   }
 
 
