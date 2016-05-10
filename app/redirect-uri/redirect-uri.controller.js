@@ -5,9 +5,9 @@
     .module('app')
     .controller('RedirectController', RedirectController);
 
-  RedirectController.$inject = ['$state', '$stateParams'];
+  RedirectController.$inject = ['$stateParams', '$state'];
 
-  function RedirectController ($state, $stateParams){
+  function RedirectController ($stateParams, $state){
     console.log("inside RedirectController");
     console.log("Access Token ", $stateParams.access_token);
   }
