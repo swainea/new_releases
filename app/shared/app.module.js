@@ -18,8 +18,12 @@
       templateUrl: 'login/login.template.html',
       controller: 'LoginController',
       controllerAs: 'lc'
+    })
+    .state('redirect',{
+      url: '/redirect-uri',
+      templateUrl: 'redirect-uri/redirect-uri.template.html'
     });
-
+    
     // .state('newReleases',{
     //   url: '/new-releases',
     //   templateUrl: 'new-releases/new-releases.tempate.html',
