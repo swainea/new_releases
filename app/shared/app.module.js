@@ -13,11 +13,9 @@
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-    .state('login', {
+    .state('home', {
       url: '/',
-      templateUrl: 'login/login.template.html',
-      controller: 'LoginController',
-      controllerAs: 'lc'
+      templateUrl: 'home/home.template.html'
     })
     .state('redirect',{
       url: '/redirect-uri?access_token',
