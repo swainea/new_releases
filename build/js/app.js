@@ -25,8 +25,8 @@
     })
     .state('new-releases',{
       url: '/new-releases',
-      template: '<h2>New Releases</h2>'
-      // templateUrl: 'new-releases/new-releases.tempate.html',
+      // template: '<h2>New Releases</h2>'
+      templateUrl: 'new-releases/new-releases.template.html'
       // controller: 'NewReleasesController',
       // controllerAs: 'nr',
       // secure: true
@@ -63,6 +63,20 @@
 
   }
 
+
+}());
+;(function() {
+  'use strict';
+
+  angular
+    .module('app')
+    .controller('NewReleasesController', NewReleasesController);
+
+  NewReleasesController.$inject = ['SpotifyService'];
+
+  function NewReleasesController(){
+
+  }
 
 }());
 ;(function() {
