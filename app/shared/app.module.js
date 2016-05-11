@@ -24,15 +24,15 @@
       templateUrl: 'redirect-uri/redirect-uri.template.html',
       controller: 'RedirectController',
       controllerAs: 'rc'
+    })
+    .state('new-releases',{
+      url: '/new-releases',
+      template: '<h2>New Releases</h2>'
+      // templateUrl: 'new-releases/new-releases.tempate.html',
+      // controller: 'NewReleasesController',
+      // controllerAs: 'nr',
+      // secure: true
     });
-
-    // .state('newReleases',{
-    //   url: '/new-releases',
-    //   templateUrl: 'new-releases/new-releases.tempate.html',
-    //   controller: 'NewReleasesController',
-    //   controllerAs: 'nr',
-    //   secure: true
-    // });
   }
 
 

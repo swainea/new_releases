@@ -24,15 +24,15 @@
       templateUrl: 'redirect-uri/redirect-uri.template.html',
       controller: 'RedirectController',
       controllerAs: 'rc'
+    })
+    .state('new-releases',{
+      url: '/new-releases',
+      template: '<h2>New Releases</h2>'
+      // templateUrl: 'new-releases/new-releases.tempate.html',
+      // controller: 'NewReleasesController',
+      // controllerAs: 'nr',
+      // secure: true
     });
-
-    // .state('newReleases',{
-    //   url: '/new-releases',
-    //   templateUrl: 'new-releases/new-releases.tempate.html',
-    //   controller: 'NewReleasesController',
-    //   controllerAs: 'nr',
-    //   secure: true
-    // });
   }
 
 
@@ -51,7 +51,7 @@
 
     this.oAuth = function oAuth (){
       var client_id = '76448191f52d4674a641b52162d19c85';
-      var redirect_uri = 'http://127.0.0.1:3000/redirect-uri/redirect-uri.template.html';
+      var redirect_uri = 'http://127.0.0.1:3000/#/redirect-uri?access_token';
 
       var url = 'https://accounts.spotify.com/authorize';
       url += '?response_type=token';
@@ -79,6 +79,9 @@
   function RedirectController ($stateParams, $state){
     console.log("inside RedirectController");
     console.log("Access Token ", $stateParams.access_token);
+    localStorage.setItem( "token", $stateParams.access_token );
+    // $state.go( "new-releases" );
+
   }
 
 }());
