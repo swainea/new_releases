@@ -19,9 +19,9 @@
     })
     .state('new-releases',{
       url: '/new-releases',
-      templateUrl: 'new-releases/new-releases.template.html'
-      // controller: 'NewReleasesController',
-      // controllerAs: 'nr',
+      templateUrl: 'new-releases/new-releases.template.html',
+      controller: 'NewReleasesController',
+      controllerAs: 'nr'
       // secure: true
     });
 

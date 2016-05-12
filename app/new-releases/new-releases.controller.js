@@ -7,8 +7,9 @@
 
   NewReleasesController.$inject = ['SpotifyService'];
 
-  function NewReleasesController(){
-
+  function NewReleasesController(SpotifyService){
+    console.log("inside NewReleasesController");
+    SpotifyService.getNewReleases(localStorage.getItem("access_token"));
   }
 
 }());

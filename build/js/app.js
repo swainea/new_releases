@@ -19,9 +19,9 @@
     })
     .state('new-releases',{
       url: '/new-releases',
-      templateUrl: 'new-releases/new-releases.template.html'
-      // controller: 'NewReleasesController',
-      // controllerAs: 'nr',
+      templateUrl: 'new-releases/new-releases.template.html',
+      controller: 'NewReleasesController',
+      controllerAs: 'nr'
       // secure: true
     });
 
@@ -105,8 +105,9 @@
 
   NewReleasesController.$inject = ['SpotifyService'];
 
-  function NewReleasesController(){
-
+  function NewReleasesController(SpotifyService){
+    console.log("inside NewReleasesController");
+    SpotifyService.getNewReleases(localStorage.getItem("access_token"));
   }
 
 }());
@@ -115,18 +116,32 @@
 
   angular
     .module('app')
-    .controller('RedirectController', RedirectController);
+    .factory('SpotifyService', SpotifyService);
 
-  RedirectController.$inject = ['$stateParams', '$state'];
+  SpotifyService.$inject = ['$http'];
 
-  function RedirectController ($stateParams, $state){
-    console.log("inside RedirectController");
-    console.log("Access Token ", $stateParams.access_token);
-    localStorage.setItem( "token", $stateParams.access_token );
-    // $state.go( "new-releases" );
+  function SpotifyService ($http){
 
+    return {
+      getNewReleases: getNewReleases
+    };
+
+    function getNewReleases ( access_token ){
+      console.log("access_token: ", access_token);
+      return $http ({
+        method: 'GET',
+        url: 'https://api.spotify.com/v1/browse/new-releases?offset=0&limit=50',
+        headers: {
+           'Authorization': 'Bearer ' + access_token
+        },
+      }).then (function onSucces (response){
+        console.log("onSuccess: ", response);
+        return response;
+      }, function onError (response){
+        console.log("onError", response);
+      });
+    }
   }
-
 }());
 
 //# sourceMappingURL=app.js.map
