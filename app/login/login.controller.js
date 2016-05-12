@@ -12,7 +12,7 @@
 
     this.oAuth = function oAuth (){
       var client_id = '76448191f52d4674a641b52162d19c85';
-      var redirect_uri = 'http://127.0.0.1:3000/#/redirect-uri?access_token';
+      var redirect_uri = 'http://127.0.0.1:3000';
 
       var url = 'https://accounts.spotify.com/authorize';
       url += '?response_type=token';

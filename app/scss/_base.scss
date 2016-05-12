@@ -6,8 +6,8 @@ body {
 
 .login_button {
   box-shadow: 1px 1px 10px #999;
-  background-color: #fff;
-  opacity: 0.7;
+  background-color: none;
+  // opacity: 0.7;
   height: 100px;
   padding: 30px;
   margin: 0 auto;
@@ -21,7 +21,7 @@ body {
 }
 
 .login_button:hover {
-  text-shadow: 1px 1px #fff;
+  text-shadow: 1px 1px #ccc;
 }
 
 .wrapper {
@@ -41,7 +41,7 @@ body {
 	}
 
 	img {
-		box-shadow: 1px 1px 5px #999;
+		box-shadow: 1px 1px 5px #999; 
 		margin-bottom:2px;
     margin-right: 10px;
 		cursor: pointer;
