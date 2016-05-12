@@ -113,7 +113,8 @@
       .then(function ( response ){
         console.log("response: ", response);
         that.albumData =  response;
-        console.log("this.albumData: ", that.albumData);
+        console.log("that.albumData: ", that.albumData);
+        console.log("images: ", that.albumData[0].images[0].url);
       });
 
   }
