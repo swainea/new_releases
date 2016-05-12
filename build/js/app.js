@@ -106,8 +106,16 @@
   NewReleasesController.$inject = ['SpotifyService'];
 
   function NewReleasesController(SpotifyService){
-    console.log("inside NewReleasesController");
-    SpotifyService.getNewReleases(localStorage.getItem("access_token"));
+    var that = this;
+    this.albumData = [];
+
+    SpotifyService.getNewReleases(localStorage.getItem("access_token"))
+      .then(function ( response ){
+        console.log("response: ", response);
+        that.albumData =  response;
+        console.log("this.albumData: ", that.albumData);
+      });
+
   }
 
 }());
@@ -135,8 +143,8 @@
            'Authorization': 'Bearer ' + access_token
         },
       }).then (function onSucces (response){
-        console.log("onSuccess: ", response);
-        return response;
+        console.log("onSuccess: ", response.data.albums.items);
+        return response.data.albums.items;
       }, function onError (response){
         console.log("onError", response);
       });

@@ -22,8 +22,8 @@
            'Authorization': 'Bearer ' + access_token
         },
       }).then (function onSucces (response){
-        console.log("onSuccess: ", response);
-        return response;
+        console.log("onSuccess: ", response.data.albums.items);
+        return response.data.albums.items;
       }, function onError (response){
         console.log("onError", response);
       });
