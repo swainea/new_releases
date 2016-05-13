@@ -1,0 +1,21 @@
+.login_button {
+  @include boxShadow();
+  background-color: transparent;
+  opacity: 0.7;\
+  height: 100px;
+  padding: 30px;
+  margin: 0 auto;
+  font-family: $themeFont;
+  font-weight: $themeFontWeight;
+  display: block;
+  margin-top: 28%;
+  font-size: 1.5em;
+  color: #6d6d6d;
+  cursor: pointer;
+  border-radius: 20px;
+  outline: none;
+}
+
+.login_button:hover {
+  opacity: 1;
+}

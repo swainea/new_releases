@@ -4,49 +4,10 @@ body {
   background-size:cover;
 }
 
-.login_button {
-  box-shadow: 1px 1px 10px #999;
-  background-color: none;
-  // opacity: 0.7;
-  height: 100px;
-  padding: 30px;
-  margin: 0 auto;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 200;
-  display: block;
-  margin-top: 28%;
-  font-size: 1.5em;
-  color: #6d6d6d;
-  cursor: pointer;
+h1 {
+  font-family: $themeFont;
+  font-weight: $themeFontWeight;
+  font-style: italic;
+  color: white;
+  opacity: 0.5;
 }
-
-.login_button:hover {
-  text-shadow: 1px 1px #ccc;
-}
-
-.wrapper {
-		box-shadow: 1px 1px 10px #999;
-		margin: auto;
-		text-align: center;
-		position: relative;
-		border-radius: 5px;
-		width: 75%;
-		padding-top: 30px;
-    margin-top: 15%;
-	}
-	.scrollbar {
-		overflow-x: scroll;
-		height: 350px;
-    white-space:nowrap
-	}
-
-	img {
-		box-shadow: 1px 1px 5px #999; 
-		margin-bottom:2px;
-    margin-right: 10px;
-		cursor: pointer;
-	}
-  li {
-    text-decoration: none;
-    display:inline-block;
-  }
