@@ -1,7 +1,7 @@
 .login_button {
   @include boxShadow();
   background-color: transparent;
-  opacity: 0.7;\
+  opacity: 0.7;
   height: 100px;
   padding: 30px;
   margin: 0 auto;
@@ -11,7 +11,7 @@
   margin-top: 28%;
   font-size: 1.5em;
   color: #6d6d6d;
-  cursor: pointer;
+  cursor: $themeClickableCursor; 
   border-radius: 20px;
   outline: none;
 }

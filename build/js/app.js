@@ -21,8 +21,8 @@
       url: '/new-releases',
       templateUrl: 'new-releases/new-releases.template.html',
       controller: 'NewReleasesController',
-      controllerAs: 'nr'
-      // secure: true
+      controllerAs: 'nr',
+      secure: true
     });
 
     function redirect (){
@@ -73,10 +73,7 @@
     .module('app')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['$stateParams', '$state'];
-
-  function LoginController($stateParams, $state){
-    console.log('in login controller');
+  function LoginController(){
 
     this.oAuth = function oAuth (){
       var client_id = '76448191f52d4674a641b52162d19c85';
@@ -103,11 +100,16 @@
     .module('app')
     .controller('NewReleasesController', NewReleasesController);
 
-  NewReleasesController.$inject = ['SpotifyService'];
+  NewReleasesController.$inject = ['$state', 'SpotifyService'];
 
-  function NewReleasesController(SpotifyService){
+  function NewReleasesController($state, SpotifyService){
     var that = this;
     this.albumData = [];
+
+    if (!localStorage.getItem("access_token")){
+        $state.go('home');
+
+    } else {
 
     SpotifyService.getNewReleases(localStorage.getItem("access_token"))
       .then(function ( response ){
@@ -116,6 +118,7 @@
         console.log("that.albumData: ", that.albumData);
         console.log("images: ", that.albumData[0].images[0].url);
       });
+    }
 
   }
 

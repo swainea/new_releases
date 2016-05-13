@@ -8,6 +8,6 @@ h1 {
   font-family: $themeFont;
   font-weight: $themeFontWeight;
   font-style: italic;
-  color: white;
+  color: $themeFontLightest;
   opacity: 0.5;
 }

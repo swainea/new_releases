@@ -365,46 +365,61 @@ body {
   background-repeat: no-repeat;
   background-size: cover; }
 
+h1 {
+  font-family: "Rambla", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: white;
+  opacity: 0.5; }
+
 .login_button {
   box-shadow: 1px 1px 10px #999;
-  background-color: none;
+  background-color: transparent;
+  opacity: 0.7;
   height: 100px;
   padding: 30px;
   margin: 0 auto;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 200;
+  font-family: "Rambla", sans-serif;
+  font-weight: 700;
   display: block;
   margin-top: 28%;
   font-size: 1.5em;
   color: #6d6d6d;
-  cursor: pointer; }
+  cursor: pointer;
+  border-radius: 20px;
+  outline: none; }
 
 .login_button:hover {
-  text-shadow: 1px 1px #ccc; }
+  opacity: 1; }
 
-.wrapper {
+.titleWrapper {
+  width: 75%;
+  margin: auto;
+  position: relative;
+  margin-top: 10%; }
+
+.scrollWrapper {
   box-shadow: 1px 1px 10px #999;
+  width: 75%;
   margin: auto;
   text-align: center;
   position: relative;
   border-radius: 5px;
-  width: 75%;
-  padding-top: 30px;
-  margin-top: 15%; }
+  padding-top: 30px; }
 
 .scrollbar {
-  overflow-x: scroll;
+  overflow: auto;
   height: 350px;
   white-space: nowrap; }
-
-img {
-  box-shadow: 1px 1px 5px #999;
-  margin-bottom: 2px;
-  margin-right: 10px;
-  cursor: pointer; }
 
 li {
   text-decoration: none;
   display: inline-block; }
+
+img {
+  box-shadow: 1px 1px 10px #999;
+  margin-bottom: 2px;
+  margin-right: 10px;
+  cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */

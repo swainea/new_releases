@@ -1,32 +1,29 @@
 .titleWrapper{
+  @include wrapperWidth();
   margin: auto;
   position: relative;
-  // text-align: center;
-  width: 75%;
   margin-top: 10%
 }
 .scrollWrapper {
 		@include boxShadow();
+    @include wrapperWidth();
 		margin: auto;
 		text-align: center;
 		position: relative;
 		border-radius: 5px;
-		width: 75%;
 		padding-top: 30px;
-    // margin-top: 5%;
 	}
 	.scrollbar {
-		overflow-x: scroll;
+		overflow: auto;
 		height: 350px;
     white-space:nowrap
 	}
   li {
-    text-decoration: none;
-    display:inline-block;
+    @include horizontalList();
   }
 	img {
 		@include boxShadow();
 		margin-bottom:2px;
     margin-right: 10px;
-		cursor: pointer;
+		cursor: $themeClickableCursor;
 	}

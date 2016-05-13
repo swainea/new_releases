@@ -1,3 +1,10 @@
 @mixin boxShadow {
     box-shadow: 1px 1px 10px #999;
 }
+@mixin wrapperWidth {
+  width: 75%;
+}
+@mixin horizontalList{
+  text-decoration: none;
+  display: inline-block;
+}

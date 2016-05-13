@@ -1,7 +1,11 @@
-<div class="wrapper">
-  <div class="scrollbar">
-      <ul>
-        <li ng-repeat=" albumArt in nr.albumData"><img ng-src="{{albumArt.images[1].url}}" /></li>
-      </ul>
-  </div>
+
+<div class="titleWrapper">
+  <h1>NEW RELEASES</h1>
 </div>
+  <div class="scrollWrapper">
+    <div class="scrollbar">
+        <ul>
+          <li ng-repeat=" albumArt in nr.albumData"><img ng-src="{{albumArt.images[1].url}}" /></li>
+        </ul>
+    </div>
+  </div>
