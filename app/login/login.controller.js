@@ -5,10 +5,7 @@
     .module('app')
     .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['$stateParams', '$state'];
-
-  function LoginController($stateParams, $state){
-    console.log('in login controller');
+  function LoginController(){
 
     this.oAuth = function oAuth (){
       var client_id = '76448191f52d4674a641b52162d19c85';
