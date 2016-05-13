@@ -79,14 +79,6 @@ module.exports = function(grunt) {
                 'app/**/*.js',
                 'test/specs/**/*.js'
               ],
-              // preprocessors: {
-              //   // 'dev/create-author/create-new-author.service.js': ['coverage'],
-              //   'dev/create-author/create-new-author.controller.js': ['coverage']
-              // },
-              // reporters: ['progress', 'coverage'],
-              // coverageReporter: {
-              //   type: 'text-summary'
-              // }
             }
           }
         }
