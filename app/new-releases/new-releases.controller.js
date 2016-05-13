@@ -5,11 +5,16 @@
     .module('app')
     .controller('NewReleasesController', NewReleasesController);
 
-  NewReleasesController.$inject = ['SpotifyService'];
+  NewReleasesController.$inject = ['$state', 'SpotifyService'];
 
-  function NewReleasesController(SpotifyService){
+  function NewReleasesController($state, SpotifyService){
     var that = this;
     this.albumData = [];
+
+    if (!localStorage.getItem("access_token")){
+        $state.go('home');
+
+    } else {
 
     SpotifyService.getNewReleases(localStorage.getItem("access_token"))
       .then(function ( response ){
@@ -18,6 +23,7 @@
         console.log("that.albumData: ", that.albumData);
         console.log("images: ", that.albumData[0].images[0].url);
       });
+    }
 
   }
 
