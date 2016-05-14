@@ -22,6 +22,7 @@
         that.albumData =  response;
         console.log("that.albumData: ", that.albumData);
         console.log("images: ", that.albumData[0].images[0].url);
+        console.log("link to spotify: ", that.albumData[0].external_urls.spotify); 
       });
     }
 

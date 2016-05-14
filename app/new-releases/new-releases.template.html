@@ -5,7 +5,7 @@
   <div class="scrollWrapper">
     <div class="scrollbar">
         <ul>
-          <li ng-repeat=" albumArt in nr.albumData"><img ng-src="{{albumArt.images[1].url}}" /></li>
+          <li ng-repeat=" albumArt in nr.albumData"><a ng-href="{{albumArt.external_urls.spotify}}"><img ng-src="{{albumArt.images[1].url}}" /></a></li>
         </ul>
     </div>
   </div>
