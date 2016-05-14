@@ -409,17 +409,34 @@ h1 {
 
 .scrollbar {
   overflow: auto;
-  height: 350px;
+  height: 380px;
   white-space: nowrap; }
 
 li {
   text-decoration: none;
-  display: inline-block; }
+  display: inline-block;
+  cursor: pointer; }
 
 img {
   box-shadow: 1px 1px 10px #999;
+  margin-top: 20px;
   margin-bottom: 2px;
   margin-right: 10px;
-  cursor: pointer; }
+  -webkit-transition: all 1s ease;
+  /* Safari and Chrome */
+  -moz-transition: all 1s ease;
+  /* Firefox */
+  -o-transition: all 1s ease;
+  /* Opera */
+  transition: all 1s ease; }
+
+.albumArt:hover img {
+  -webkit-transform: scale(1.1);
+  /* Safari and Chrome */
+  -moz-transform: scale(1.1);
+  /* Firefox */
+  -o-transform: scale(1.1);
+  /* Opera */
+  transform: scale(1.1); }
 
 /*# sourceMappingURL=main.css.map */

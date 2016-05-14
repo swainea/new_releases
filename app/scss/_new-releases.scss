@@ -15,15 +15,27 @@
 	}
 	.scrollbar {
 		overflow: auto;
-		height: 350px;
+		height: 380px;
     white-space:nowrap
 	}
   li {
     @include horizontalList();
+    cursor: $themeClickableCursor;
   }
 	img {
 		@include boxShadow();
+    margin-top: 20px;
 		margin-bottom:2px;
     margin-right: 10px;
-		cursor: $themeClickableCursor;
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
 	}
+
+.albumArt:hover img{
+  -webkit-transform:scale(1.10); /* Safari and Chrome */
+  -moz-transform:scale(1.10); /* Firefox */
+  -o-transform:scale(1.10); /* Opera */
+  transform:scale(1.10);
+}
