@@ -22,7 +22,7 @@
     @include horizontalList();
     cursor: $themeClickableCursor;
   }
-	img {
+	.albumCoverImg {
 		@include boxShadow();
     margin-top: 20px;
 		margin-bottom:2px;

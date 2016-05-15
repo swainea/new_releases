@@ -376,13 +376,12 @@ h1 {
   box-shadow: 1px 1px 10px #999;
   background-color: transparent;
   opacity: 0.7;
-  height: 100px;
+  height: 50px;
   padding: 30px;
   margin: 0 auto;
   font-family: "Rambla", sans-serif;
   font-weight: 700;
   display: block;
-  margin-top: 28%;
   font-size: 1.5em;
   color: #6d6d6d;
   cursor: pointer;
@@ -391,6 +390,13 @@ h1 {
 
 .login_button:hover {
   opacity: 1; }
+
+.homeLogo {
+  display: block;
+  margin: 0 auto;
+  height: 150px;
+  opacity: 0.4;
+  margin-top: 25%; }
 
 .titleWrapper {
   width: 75%;
@@ -417,7 +423,7 @@ li {
   display: inline-block;
   cursor: pointer; }
 
-img {
+.albumCoverImg {
   box-shadow: 1px 1px 10px #999;
   margin-top: 20px;
   margin-bottom: 2px;
