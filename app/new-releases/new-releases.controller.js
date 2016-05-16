@@ -10,12 +10,13 @@
   function NewReleasesController($state, SpotifyService){
     var that = this;
     this.albumData = [];
+    this.errorMessage = "";
 
     if (!localStorage.getItem("access_token")){
         $state.go('home');
 
     } else {
-
+    
     SpotifyService.getNewReleases(localStorage.getItem("access_token"))
       .then(function ( response ){
         console.log("response: ", response);
@@ -23,8 +24,11 @@
         console.log("that.albumData: ", that.albumData);
         console.log("images: ", that.albumData[0].images[0].url);
         console.log("link to spotify: ", that.albumData[0].external_urls.spotify);
+      })
+      .catch(function onError ( reponse ){
+        console.log ('error response: ', response );
+        that.errorMessage = "Unable to process request. Please try again.";
       });
-      //need to add my dot catch here to hand errors with the http request 
     }
 
   }
