@@ -14,7 +14,7 @@
     };
 
     function getNewReleases ( access_token ){
-      console.log("access_token: ", access_token);
+      // console.log("access_token: ", access_token);
       return $http ({
         method: 'GET',
         url: 'https://api.spotify.com/v1/browse/new-releases?offset=0&limit=50',

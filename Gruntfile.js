@@ -76,13 +76,20 @@ module.exports = function(grunt) {
                 'node_modules/angular/angular.js',
                 'node_modules/angular-ui-router/release/angular-ui-router.js',
                 'node_modules/angular-mocks/angular-mocks.js',
-                'app/**/*.js',
-                'test/specs/**/*.js'
+                'app/shared/app.module.js',
+                'test/specs/**/*.js',
+                'app/**/*.js'
               ],
+              preprocessors: {
+                'app/new-releases/new-releases.controller.js': ['coverage']
+              },
+              reporters: ['progress', 'coverage'],
+              coverageReporter: {
+                type: 'text-summary'
             }
           }
         }
-
+      }
     });
 
     require('load-grunt-tasks')(grunt);
