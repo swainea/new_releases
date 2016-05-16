@@ -55,7 +55,10 @@
       var token = 123456;
       SpotifyService.getNewReleases(token)
         .then(function(items){
+          assert.strictEqual(1 === 1, true, 'sanity test');
           assert.isArray(items, "items returns an array");
+          assert.ok(items[0].external_urls, "items includes an external_urls object");
+          assert.strictEqual(items.length, 2, 'correct number of results'); 
           doneCallback();
         })
         .catch(function(){
