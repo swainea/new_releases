@@ -81,7 +81,8 @@ module.exports = function(grunt) {
                 'app/**/*.js'
               ],
               preprocessors: {
-                'app/new-releases/new-releases.controller.js': ['coverage']
+                // 'app/new-releases/new-releases.controller.js': ['coverage']
+                'app/shared/spotify.service.js': ['coverage']
               },
               reporters: ['progress', 'coverage'],
               coverageReporter: {

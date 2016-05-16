@@ -25,6 +25,7 @@
         console.log("onSuccess: ", response.data.albums.items);
         return response.data.albums.items;
       }, function onError (response){
+        // this error needs to be handled in the UI so the user knows to retry 
         console.log("onError", response);
       });
     }

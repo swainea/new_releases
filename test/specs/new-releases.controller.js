@@ -21,7 +21,7 @@
       mockSpotifyService.getNewReleases = function ( access_token ){
         var def = $q.defer();
         def.resolve({
-          access_token: '123'
+
         });
         return def.promise;
       };
