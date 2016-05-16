@@ -58,7 +58,7 @@
   test('getNewReleases functions as expected', function(doneCallback){
     var token = 123456;
     var returnValue = SpotifyService.getNewReleases(token);
-    assert.ok(returnValue, 'returnValue exisits');
+    assert.ok(returnValue, 'returnValue exists');
     assert.isFunction(returnValue.then, 'returnValue returns a promise');
 
     returnValue.then(function(items){
@@ -72,16 +72,18 @@
     $httpBackend.flush();
   });
 
-  test('invalid access token', function(){
+  test('non-string access token', function(doneCallback){
     var token = "null";
     var returnValue = SpotifyService.getNewReleases(token);
+    assert.ok(returnValue, 'returnValue exists');
+    assert.isFunction(returnValue.catch, 'returnValue returns a promise');
 
     returnValue.then(function(){
       assert.ok(false, 'should not send request');
       doneCallback();
     })
     .catch(function(){
-      // here i want to assert that we get into the catch if invalid token
+      assert.ok(true, 'should exisit if invalid token');
       doneCallback();
     });
     $httpBackend.flush();
