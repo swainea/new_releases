@@ -5,12 +5,14 @@
     .module('app')
     .controller('NewReleasesController', NewReleasesController);
 
-  NewReleasesController.$inject = ['$state', '$q', 'SpotifyService'];
+  NewReleasesController.$inject = ['$stateParams', '$state', '$q', 'SpotifyService'];
 
-  function NewReleasesController($state, $q, SpotifyService){
+  function NewReleasesController($stateParams, $state, $q, SpotifyService){
     var that = this;
     this.albumData = [];
     this.errorMessage = "";
+    this.album = $stateParams.album;
+    console.log("$stateParams.album: ". $stateParams.album);
 
     this.init = function init(){
       if (!localStorage.getItem("access_token")){
