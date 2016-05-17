@@ -1,17 +1,13 @@
 (function() {
   'use strict';
 
-  var asser = chai.assert;
+  var assert = chai.assert;
 
   suite('new-releases controller', function(){
-    var newReleases, $rootScope;
+    var newReleases;
     var mockSpotifyService = {};
 
     setup(module('app'));
-
-    setup(module(function($provide){
-      $provide.value('SpotifyService', mockSpotifyService);
-    }));
 
     setup(inject(function(_$rootScope_, $controller, $q){
       $rootScope = _$rootScope_;
@@ -19,17 +15,28 @@
       newReleases = $controller('NewReleasesController');
 
       mockSpotifyService.getNewReleases = function ( access_token ){
-        var def = $q.defer();
-        def.resolve({
+         
+      }
 
-        });
-        return def.promise;
-      };
     }));
 
-    test('sanity tests', function (doneCallback){
-      assert.strictEqual(1 === 1, true, 'sanity test');
-      doneCallback();
+    test('sanity tests', function (){
+      assert.strictEqual(newReleases.errorMessage, "", 'message starts as empty string');
+      assert.strictEqual(newReleases.albumData, [], 'albumData starts as an empty array');
+    });
+
+    test('init method works', function (doneCallback){
+      assert.isFunction(newReleases.init, 'init method exists');
+      newReleases.init()
+        .then(function(){
+
+
+          doneCallback();
+        })
+        .catch(function(){
+          assert.ok(false, 'should not reject promise');
+          doneCallback();
+        });
     });
 
   });
