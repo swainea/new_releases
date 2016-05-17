@@ -73,7 +73,7 @@
   });
 
   test('non-string access token', function(doneCallback){
-    var token = "null";
+    var token = 0;
     var returnValue = SpotifyService.getNewReleases(token);
     assert.ok(returnValue, 'returnValue exists');
     assert.isFunction(returnValue.catch, 'returnValue returns a promise');
