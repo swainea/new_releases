@@ -16,6 +16,7 @@
       url += '&client_id=' + encodeURIComponent(client_id);
       url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
 
+      // $location was not redirecting properly so I've used window.location
       window.location = url;
     };
 
