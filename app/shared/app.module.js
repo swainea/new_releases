@@ -23,6 +23,15 @@
       controller: 'NewReleasesController',
       controllerAs: 'nr',
       secure: true
+    })
+    .state('album-view',{
+      url: '/album-view',
+      templateUrl: 'album-view/album-view.template.html',
+      // controller: AlbumViewController,
+      // controllerAs: 'av',
+      params: {
+        album: null
+      }
     });
 
     function redirect (){
