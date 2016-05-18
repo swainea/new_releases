@@ -10,7 +10,8 @@
   function SpotifyService ($http, $q){
 
     return {
-      getNewReleases: getNewReleases
+      getNewReleases: getNewReleases,
+      getArtistData: getArtistData
     };
 
     function getNewReleases ( access_token ){
@@ -25,7 +26,7 @@
              'Authorization': 'Bearer ' + access_token
           }
         }).then (function onSucces (response){
-          console.log("onSuccess: ", response.data.albums.items);
+          // console.log("onSuccess: ", response.data.albums.items);
           return response.data.albums.items;
         });
 
@@ -39,5 +40,29 @@
       }
 
     }
+
+      function getArtistData ( href ){
+        return $http ({
+          method: 'GET',
+          url: href
+        }).then (function onSuccess (response){
+          console.log("onSuccess of getArtistData", response);
+          return response.data.artists;
+        });
+      }
+  // function getRelatedArtists ( access_token ) {
+  //   if (typeof access_token === 'string'){
+  //
+  //     return $http ({
+  //       method: 'GET',
+  //       url: 'https://api.spotify.com/v1/artists/ + INSERT ID HERE + /related-artists'
+  //     }).then (function onSuccess (response){
+  //       console.log('getRelatedArtists onSuccess: ', response);
+  //       return response;
+  //     });
+  //   }
+  // }
+
+
   }
 }());
