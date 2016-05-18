@@ -4,7 +4,6 @@
   angular
     .module('app', ['ui.router'])
     .config(appConfig);
-   // .run(appStartup);
 
   appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -27,8 +26,8 @@
     .state('album-view',{
       url: '/album-view',
       templateUrl: 'album-view/album-view.template.html',
-      // controller: AlbumViewController,
-      // controllerAs: 'av',
+      controller: 'AlbumViewController',
+      controllerAs: 'av',
       params: {
         album: null
       }
