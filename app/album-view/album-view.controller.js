@@ -10,7 +10,6 @@
   function AlbumViewController($state, $stateParams, SpotifyService){
     var that = this;
     this.album = $stateParams.album;
-    console.log(this.album);
     this.artistData = [];
 
     this.init = function init(){
@@ -24,9 +23,5 @@
           });
       }
     };
-
-    this.listen = function listen(){
-       
-    }
   }
 }());

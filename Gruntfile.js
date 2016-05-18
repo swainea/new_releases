@@ -77,12 +77,13 @@ module.exports = function(grunt) {
                 'node_modules/angular-ui-router/release/angular-ui-router.js',
                 'node_modules/angular-mocks/angular-mocks.js',
                 'app/shared/app.module.js',
-                'test/specs/**/*.js',
+                'test/specs/new-releases.controller.js',
                 'app/**/*.js'
               ],
               preprocessors: {
-                // 'app/new-releases/new-releases.controller.js': ['coverage']
-                'app/shared/spotify.service.js': ['coverage']
+                'app/new-releases/new-releases.controller.js': ['coverage']
+                // 'app/shared/spotify.service.js': ['coverage']
+                // 'app/login/login.controller.js': ['coverage']
               },
               reporters: ['progress', 'coverage'],
               coverageReporter: {

@@ -11,7 +11,8 @@
 
     return {
       getNewReleases: getNewReleases,
-      getArtistData: getArtistData
+      getArtistData: getArtistData,
+      getRecommendedArtists: getRecommendedArtists
     };
 
     function getNewReleases ( access_token ){
@@ -50,19 +51,16 @@
           return response.data.artists;
         });
       }
-  // function getRelatedArtists ( access_token ) {
-  //   if (typeof access_token === 'string'){
-  //
-  //     return $http ({
-  //       method: 'GET',
-  //       url: 'https://api.spotify.com/v1/artists/ + INSERT ID HERE + /related-artists'
-  //     }).then (function onSuccess (response){
-  //       console.log('getRelatedArtists onSuccess: ', response);
-  //       return response;
-  //     });
-  //   }
-  // }
 
+      function getRecommendedArtists ( id ) {
+          return $http ({
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/artists/' + id + '/related-artists'
+          }).then (function onSuccess (response){
+            console.log('getRelatedArtists onSuccess: ', response);
+            return response.data.artists;
+          });
+        }
+      }
 
-  }
 }());

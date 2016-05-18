@@ -11,8 +11,6 @@
     var that = this;
     this.albumData = [];
     this.errorMessage = "";
-    this.album = $stateParams.album;
-    console.log("$stateParams.album: ". $stateParams.album);
 
     this.init = function init(){
       if (!localStorage.getItem("access_token")){

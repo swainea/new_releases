@@ -31,6 +31,12 @@
       params: {
         album: null
       }
+    })
+    .state('recommended-artists', {
+      url: '/artist/:id/recommended',
+      templateUrl: 'recommended-artists/recommended-artists.template.html',
+      controller: 'RecommendedArtistsController',
+      controllerAs: 'ra'
     });
 
     function redirect (){

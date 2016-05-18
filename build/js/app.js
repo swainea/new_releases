@@ -4,7 +4,6 @@
   angular
     .module('app', ['ui.router'])
     .config(appConfig);
-   // .run(appStartup);
 
   appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -23,6 +22,21 @@
       controller: 'NewReleasesController',
       controllerAs: 'nr',
       secure: true
+    })
+    .state('album-view',{
+      url: '/album-view',
+      templateUrl: 'album-view/album-view.template.html',
+      controller: 'AlbumViewController',
+      controllerAs: 'av',
+      params: {
+        album: null
+      }
+    })
+    .state('recommended-artists', {
+      url: '/artist/:id/recommended',
+      templateUrl: 'recommended-artists/recommended-artists.template.html',
+      controller: 'RecommendedArtistsController',
+      controllerAs: 'ra'
     });
 
     function redirect (){
@@ -71,6 +85,33 @@
 
   angular
     .module('app')
+    .controller('AlbumViewController', AlbumViewController);
+
+  AlbumViewController.$inject = ['$state', '$stateParams', 'SpotifyService'];
+
+  function AlbumViewController($state, $stateParams, SpotifyService){
+    var that = this;
+    this.album = $stateParams.album;
+    this.artistData = [];
+
+    this.init = function init(){
+      if(this.album === null){
+        $state.go('new-releases');
+      } else {
+        SpotifyService.getArtistData( this.album.href )
+          .then(function ( response ){
+            console.log("response: ", response);
+            that.artistData = response;
+          });
+      }
+    };
+  }
+}());
+;(function() {
+  'use strict';
+
+  angular
+    .module('app')
     .controller('LoginController', LoginController);
 
   function LoginController(){
@@ -84,6 +125,7 @@
       url += '&client_id=' + encodeURIComponent(client_id);
       url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
 
+      // $location was not redirecting properly so I've used window.location
       window.location = url;
     };
 
@@ -100,26 +142,41 @@
     .module('app')
     .controller('NewReleasesController', NewReleasesController);
 
-  NewReleasesController.$inject = ['$state', 'SpotifyService'];
+  NewReleasesController.$inject = ['$stateParams', '$state', '$q', 'SpotifyService'];
 
-  function NewReleasesController($state, SpotifyService){
+  function NewReleasesController($stateParams, $state, $q, SpotifyService){
     var that = this;
     this.albumData = [];
+    this.errorMessage = "";
 
-    if (!localStorage.getItem("access_token")){
+    this.init = function init(){
+      if (!localStorage.getItem("access_token")){
+
         $state.go('home');
 
-    } else {
+        var deferred = $q.defer();
+        deferred.reject('You must authorize with Spotify to continue');
+        console.log('Reject: ', deferred.promise);
+        return deferred.promise;
 
-    SpotifyService.getNewReleases(localStorage.getItem("access_token"))
-      .then(function ( response ){
-        console.log("response: ", response);
-        that.albumData =  response;
-        console.log("that.albumData: ", that.albumData);
-        console.log("images: ", that.albumData[0].images[0].url);
-        console.log("link to spotify: ", that.albumData[0].external_urls.spotify); 
-      });
-    }
+      } else {
+
+      return SpotifyService.getNewReleases(localStorage.getItem("access_token"))
+        .then(function ( response ){
+          // console.log("response: ", response);
+          that.albumData =  response;
+
+          // console.log("that.albumData: ", that.albumData);
+          // console.log("images: ", that.albumData[0].images[0].url);
+          // console.log("link to spotify: ", that.albumData[0].external_urls.spotify);
+        })
+        .catch(function onError ( reponse ){
+          console.log ('error response: ', response );
+          that.errorMessage = "Unable to process request. Please try again.";
+        });
+      }
+    };
+
 
   }
 
@@ -129,32 +186,91 @@
 
   angular
     .module('app')
+    .controller('RecommendedArtistsController', RecommendedArtistsController);
+
+  RecommendedArtistsController.$injet = ['$state', '$stateParams', 'SpotifyService'];
+
+  function RecommendedArtistsController($state, $stateParams, SpotifyService){
+
+    var that = this;
+    this.id = $stateParams.id;
+    this.recs = [];
+
+    this.init = function init(){
+
+        SpotifyService.getRecommendedArtists( this.id )
+          .then(function (response){
+            console.log('recs response: ', response);
+            that.recs = response;
+          });
+    };
+}
+}());
+;(function() {
+  'use strict';
+
+  angular
+    .module('app')
     .factory('SpotifyService', SpotifyService);
 
-  SpotifyService.$inject = ['$http'];
+  SpotifyService.$inject = ['$http', '$q'];
 
-  function SpotifyService ($http){
+  function SpotifyService ($http, $q){
 
     return {
-      getNewReleases: getNewReleases
+      getNewReleases: getNewReleases,
+      getArtistData: getArtistData,
+      getRecommendedArtists: getRecommendedArtists
     };
 
     function getNewReleases ( access_token ){
-      console.log("access_token: ", access_token);
-      return $http ({
-        method: 'GET',
-        url: 'https://api.spotify.com/v1/browse/new-releases?offset=0&limit=50',
-        headers: {
-           'Authorization': 'Bearer ' + access_token
-        },
-      }).then (function onSucces (response){
-        console.log("onSuccess: ", response.data.albums.items);
-        return response.data.albums.items;
-      }, function onError (response){
-        console.log("onError", response);
-      });
+      // console.log("access_token: ", access_token);
+      // access_token = 0;
+      if (typeof access_token === 'string'){
+
+        return $http ({
+          method: 'GET',
+          url: 'https://api.spotify.com/v1/browse/new-releases?offset=0&limit=50',
+          headers: {
+             'Authorization': 'Bearer ' + access_token
+          }
+        }).then (function onSucces (response){
+          // console.log("onSuccess: ", response.data.albums.items);
+          return response.data.albums.items;
+        });
+
+      } else {
+
+        var deferred = $q.defer();
+        deferred.reject('You must authorize with Spotify to continue');
+        console.log('Reject: ', deferred.promise);
+        return deferred.promise;
+
+      }
+
     }
-  }
+
+      function getArtistData ( href ){
+        return $http ({
+          method: 'GET',
+          url: href
+        }).then (function onSuccess (response){
+          console.log("onSuccess of getArtistData", response);
+          return response.data.artists;
+        });
+      }
+
+      function getRecommendedArtists ( id ) {
+          return $http ({
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/artists/' + id + '/related-artists'
+          }).then (function onSuccess (response){
+            console.log('getRelatedArtists onSuccess: ', response);
+            return response.data.artists;
+          });
+        }
+      }
+
 }());
 
 //# sourceMappingURL=app.js.map
