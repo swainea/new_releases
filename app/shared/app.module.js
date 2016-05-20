@@ -23,7 +23,7 @@
       controllerAs: 'nr',
       secure: true
     })
-    .state('album-view',{
+    .state('new-releases.album',{
       url: '/album-view',
       templateUrl: 'album-view/album-view.template.html',
       controller: 'AlbumViewController',

@@ -5,7 +5,9 @@
   <div class="scrollWrapper">
     <div class="scrollbar">
         <ul ng-init="nr.init()">
-          <li class="albumArt" ng-repeat=" albumDetail in nr.albumData"><a ui-sref='album-view({ album: albumDetail })'><img class="albumCoverImg" ng-src="{{albumDetail.images[1].url}}" /></a></li>
+          <li class="albumArt" ng-repeat=" albumDetail in nr.albumData"><a ui-sref='new-releases.album({ album: albumDetail })'><img class="albumCoverImg" ng-src="{{albumDetail.images[1].url}}" /></a></li>
         </ul>
     </div>
   </div>
+
+<aside ui-view class='album-view'></aside>

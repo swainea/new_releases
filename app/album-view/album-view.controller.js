@@ -16,6 +16,7 @@
       if(this.album === null){
         $state.go('new-releases');
       } else {
+        console.log("this.album: ", this.album );
         SpotifyService.getArtistData( this.album.href )
           .then(function ( response ){
             console.log("response: ", response);

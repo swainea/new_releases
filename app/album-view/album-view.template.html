@@ -1,13 +1,15 @@
 
-<div class ="albumDetailWrapper" ng-init="av.init()">
-    <img class="albumCoverDetail" ng-src="{{av.album.images[1].url}}" />
-    <p class="albumText">{{av.album.name}}</p>
-    <p class="artistText">{{av.artistData[0].name}}</p>
-</div>
+<section class="albumPop">
+  <div class="opacity">
+    <div class ="albumDetailWrapper" ng-init="av.init()">
+        <img class="albumCoverDetail" ng-src="{{av.album.images[1].url}}" />
+        <p class="albumText">{{av.album.name}}</p>
+        <p class="artistText">{{av.artistData[0].name}}</p>
+    </div>
 
-<div class="buttonWrapper">
-  <div class="buttonWrapper2">
-    <button type="button" class="listenButton"><a ng-href="{{av.album.external_urls.spotify}}">LISTEN</a></button>
-    <button type="button" class="recButton"><a ui-sref='recommended-artists({ id: av.artistData[0].id })'>RECOMMENDED ALBUMS</a></button>
-  </div>  
-</div>
+    <div class="buttonWrapper">
+        <button type="button" class="listenButton"><a ng-href="{{av.album.external_urls.spotify}}">LISTEN</a></button>
+        <button type="button" class="recButton"><a ui-sref='recommended-artists({ id: av.artistData[0].id })'>RECOMMENDED ALBUMS</a></button>
+    </div>
+  </div>
+</section>
