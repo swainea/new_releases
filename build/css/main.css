@@ -372,9 +372,6 @@ h1 {
   color: white;
   opacity: 0.5; }
 
-p {
-  color: white; }
-
 .login_button {
   box-shadow: 1px 1px 10px #999;
   background-color: transparent;
@@ -455,16 +452,18 @@ li {
   opacity: 0.7;
   height: 50px;
   padding: 10px;
-  margin: 0 auto;
-  font-family: "Rambla", sans-serif;
-  font-weight: 700;
-  display: block;
   margin-top: 2%;
   font-size: 1em;
   color: #6d6d6d;
   cursor: pointer;
   border-radius: 5px;
   outline: none; }
+  .listenButton a {
+    text-decoration: none;
+    text-decoration: none;
+    font-family: "Rambla", sans-serif;
+    font-weight: 700;
+    color: #6d6d6d; }
 
 .recButton {
   box-shadow: 1px 1px 10px #999;
@@ -472,15 +471,78 @@ li {
   opacity: 0.7;
   height: 50px;
   padding: 10px;
-  margin: 0 auto;
-  font-family: "Rambla", sans-serif;
-  font-weight: 700;
-  display: block;
   margin-top: 2%;
   font-size: 1em;
-  color: #6d6d6d;
   cursor: pointer;
   border-radius: 5px;
   outline: none; }
+  .recButton a {
+    text-decoration: none;
+    font-family: "Rambla", sans-serif;
+    font-weight: 700;
+    color: #6d6d6d; }
+
+.recButton:hover {
+  opacity: 1; }
+
+.listenButton:hover {
+  opacity: 1; }
+
+.albumDetailWrapper {
+  width: 75%;
+  margin: auto;
+  display: block;
+  position: relative;
+  text-align: center; }
+  .albumDetailWrapper .albumText {
+    color: white;
+    font-family: "Rambla", sans-serif;
+    font-weight: 700;
+    font-size: 1.5em; }
+  .albumDetailWrapper .artistText {
+    color: white;
+    font-family: "Rambla", sans-serif;
+    font-weight: 700;
+    font-size: 1.2em; }
+
+.albumCoverDetail {
+  margin: auto;
+  display: block; }
+
+.buttonWrapper {
+  display: block;
+  width: 75%;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  padding-bottom: 2em; }
+
+.albumPop {
+  position: absolute;
+  top: 10%;
+  right: 30%;
+  left: 30%;
+  width: 40%;
+  box-shadow: 1px 1px 10px #999;
+  background-color: black;
+  opacity: 0.9; }
+
+.closeButton {
+  background-color: transparent;
+  height: 2em;
+  padding: .3em;
+  margin-bottom: 2em;
+  font-family: "Rambla", sans-serif;
+  font-weight: 700;
+  display: block;
+  font-size: 1em;
+  color: white;
+  margin-left: 95%;
+  cursor: pointer;
+  outline: none;
+  border: none; }
+
+p {
+  color: white; }
 
 /*# sourceMappingURL=main.css.map */

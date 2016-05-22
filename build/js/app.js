@@ -23,7 +23,7 @@
       controllerAs: 'nr',
       secure: true
     })
-    .state('album-view',{
+    .state('new-releases.album',{
       url: '/album-view',
       templateUrl: 'album-view/album-view.template.html',
       controller: 'AlbumViewController',
@@ -98,12 +98,17 @@
       if(this.album === null){
         $state.go('new-releases');
       } else {
+        console.log("this.album: ", this.album );
         SpotifyService.getArtistData( this.album.href )
           .then(function ( response ){
             console.log("response: ", response);
             that.artistData = response;
           });
       }
+    };
+
+    this.close = function close(){
+      $state.go('new-releases');
     };
   }
 }());
@@ -125,7 +130,7 @@
       url += '&client_id=' + encodeURIComponent(client_id);
       url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
 
-      // $location was not redirecting properly so I've used window.location
+      // $location was not redirecting properly because spotify was eliminating angular's '#' so I've used window.location
       window.location = url;
     };
 
@@ -166,7 +171,7 @@
           // console.log("response: ", response);
           that.albumData =  response;
 
-          // console.log("that.albumData: ", that.albumData);
+          console.log("that.albumData: ", that.albumData);
           // console.log("images: ", that.albumData[0].images[0].url);
           // console.log("link to spotify: ", that.albumData[0].external_urls.spotify);
         })

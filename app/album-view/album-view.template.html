@@ -1,6 +1,7 @@
 
 <section class="albumPop">
   <div class="opacity">
+      <button type="button" class="closeButton" ng-click="av.close()">X</button>
     <div class ="albumDetailWrapper" ng-init="av.init()">
         <img class="albumCoverDetail" ng-src="{{av.album.images[1].url}}" />
         <p class="albumText">{{av.album.name}}</p>

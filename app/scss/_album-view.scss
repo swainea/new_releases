@@ -50,7 +50,6 @@
 .albumDetailWrapper{
   width: 75%;
   margin: auto;
-  // margin-top: 10%;
   display: block;
   position: relative;
   text-align: center;
@@ -79,6 +78,7 @@
   margin: auto;
   position: relative;
   text-align: center;
+  padding-bottom: 2em;
 }
 
 .albumPop{
@@ -87,11 +87,23 @@
   right: 30%;
   left: 30%;
   width:40%;
-}
-
-.opacity{
   @include boxShadow();
   background-color: black;
   opacity: 0.9;
-  padding: 2em;
+}
+
+.closeButton{
+  background-color: transparent;
+  height: 2em;
+  padding: .3em;
+  margin-bottom: 2em;
+  font-family: $themeFont;
+  font-weight: $themeFontWeight;
+  display: block;
+  font-size: 1em;
+  color: $themeFontLightest;
+  margin-left: 95%;
+  cursor: $themeClickableCursor;
+  outline: none;
+  border: none;
 }

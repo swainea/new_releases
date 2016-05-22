@@ -24,5 +24,9 @@
           });
       }
     };
+
+    this.close = function close(){
+      $state.go('new-releases');
+    };
   }
 }());
