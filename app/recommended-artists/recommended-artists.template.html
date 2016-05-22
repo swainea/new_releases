@@ -1,3 +1,4 @@
 <div ng-init="ra.init()">
-  <p> recommended artists page!!!</p>
+  <ul>
+    <li class="recList" ng-repeat="artistDetail in ra.recs"><a ng-href="{{artistDetail.external_urls.spotify}}"><div class="recImgWrapper" ng-style="{'background-image':'url({{artistDetail.images[1].url}})'}"/></div></a></li>
 </div>

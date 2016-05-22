@@ -1,3 +1,11 @@
 p {
-  color: $themeFontLightest; 
+  color: $themeFontLightest;
+}
+.recImgWrapper{
+  height: 150px;
+  width: 150px;
+  background-size:cover;
+  background-repeat:no-repeat;
+  margin: 5px;
+  border: 3px solid $themeFontLightest;
 }
