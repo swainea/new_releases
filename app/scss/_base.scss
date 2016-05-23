@@ -1,7 +1,9 @@
-body {
-  background-image: url("http://i.imgur.com/YafrLLw.jpg");
-  background-repeat:no-repeat;
-  background-size:cover;
+html {
+  background: url("http://i.imgur.com/YafrLLw.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover; /* Safari and Chrome */
+  -moz-background-size: cover; /* Firefox */
+  -o-background-size: cover; /* Opera */
+  background-size: cover;
 }
 
 h1 {
