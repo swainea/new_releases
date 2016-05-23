@@ -407,21 +407,28 @@ h1 {
   height: 9em;
   opacity: 0.7; }
 
+@media screen and (max-width: 667px) {
+  .homeLogo {
+    height: 5em; }
+
+  .login_button {
+    height: 3.4em;
+    padding: 0.7em;
+    font-size: .6em; } }
 .nrWrapper {
   width: 75%; }
 
 .scrollWrapper {
   box-shadow: 1px 1px 10px #999;
-  margin: auto;
   border-radius: 5px;
-  padding-top: 30px; }
+  padding-top: 7px; }
 
 .scrollbar {
   overflow: auto;
-  height: 380px;
+  height: 24em;
   white-space: nowrap; }
 
-li {
+.albumArt {
   text-decoration: none;
   display: inline-block;
   cursor: pointer; }
@@ -448,6 +455,20 @@ li {
   /* Opera */
   transform: scale(1.1); }
 
+@media screen and (max-width: 1024px) {
+  .albumCoverImg {
+    height: 250px; }
+
+  .scrollbar {
+    height: 21em; } }
+@media screen and (max-width: 667px) {
+  .albumArt {
+    clear: left;
+    display: block;
+    text-align: center; }
+
+  .albumCoverImg {
+    margin-right: auto; } }
 .listenButton {
   box-shadow: 1px 1px 10px #999;
   background-color: transparent;

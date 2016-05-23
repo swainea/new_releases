@@ -3,16 +3,15 @@
 }
 .scrollWrapper {
 		@include boxShadow();
-		margin: auto;
 		border-radius: 5px;
-		padding-top: 30px;
+    padding-top: 7px;
 	}
 	.scrollbar {
 		overflow: auto;
-		height: 380px;
+		height: 24em;
     white-space:nowrap
 	}
-  li {
+  .albumArt {
     @include horizontalList();
     cursor: $themeClickableCursor;
   }
@@ -32,4 +31,25 @@
   -moz-transform:scale(1.10); /* Firefox */
   -o-transform:scale(1.10); /* Opera */
   transform:scale(1.10);
+}
+
+@media screen and (max-width: $bp-large){
+  .albumCoverImg{
+    height: 250px;
+  }
+  .scrollbar{
+    height: 21em;
+  }
+}
+
+@media screen and (max-width: $bp-medium2){
+  .albumArt{
+    clear:left;
+    display:block;
+    text-align: center;
+  }
+  .albumCoverImg{
+    margin-right: auto;
+  }
+
 }
