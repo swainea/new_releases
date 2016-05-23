@@ -21,5 +21,10 @@
             that.recs = response;
           });
     };
+
+    this.back = function back(){
+      $state.go('new-releases');
+    };
+    
 }
 }());
