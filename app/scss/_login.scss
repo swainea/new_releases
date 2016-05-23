@@ -2,8 +2,8 @@
   @include boxShadow();
   background-color: transparent;
   opacity: 0.7;
-  height: 50px;
-  padding: 10px;
+  height: 3em;
+  padding: .8em;
   margin: 0 auto;
   font-family: $themeFont;
   font-weight: $themeFontWeight;
@@ -12,7 +12,7 @@
   font-size: 1em;
   color: #6d6d6d;
   cursor: $themeClickableCursor;
-  border-radius: 5px;
+  border-radius: .4em;
   outline: none;
 }
 
@@ -23,7 +23,7 @@
 .homeLogo {
   display: block;
   margin: 0 auto;
-  height: 150px;
+  height: 9em;
   opacity: 0.7;
   margin-top: 25%;
 }
