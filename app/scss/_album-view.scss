@@ -94,3 +94,68 @@
   cursor: $themeClickableCursor;
   border: none;
 }
+
+@media screen and (max-width: $bp-large){
+  .albumPop{
+    top: 15%;
+  }
+  .albumCoverDetail{
+    height:250px;
+  }
+  .albumDetailWrapper{
+    .albumText{
+      font-size: 1.3em;
+    }
+    .artistText{
+      font-size: 1em;
+    }
+  }
+  .listenButton{
+    font-size: 0.8em;
+  }
+  .recButton{
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: $bp-medium){
+  .albumPop{
+    top: 25%;
+    width: 50%
+  }
+  .albumCoverDetail{
+    height:200px;
+  }
+}
+
+@media screen and (max-width: $bp-medium2){
+  .albumPop{
+    top: 5%;
+    width: 70%;
+    left:15%;
+    right: 15%;
+  }
+  .albumDetailWrapper{
+    .albumText{
+      font-size: 1em;
+    }
+    .artistText{
+      font-size: .8em;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-small){
+  h1{
+    font-size: 1.5em; 
+  }
+  .albumPop{
+    width:80%;
+    left: 10%;
+    right: 10%;
+  }
+  .closeButton{
+    margin-left: 93%;
+    font-size: 0.8em;
+  }
+}

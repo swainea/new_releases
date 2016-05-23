@@ -554,6 +554,53 @@ h1 {
   cursor: pointer;
   border: none; }
 
+@media screen and (max-width: 1024px) {
+  .albumPop {
+    top: 15%; }
+
+  .albumCoverDetail {
+    height: 250px; }
+
+  .albumDetailWrapper .albumText {
+    font-size: 1.3em; }
+  .albumDetailWrapper .artistText {
+    font-size: 1em; }
+
+  .listenButton {
+    font-size: 0.8em; }
+
+  .recButton {
+    font-size: 0.8em; } }
+@media screen and (max-width: 768px) {
+  .albumPop {
+    top: 25%;
+    width: 50%; }
+
+  .albumCoverDetail {
+    height: 200px; } }
+@media screen and (max-width: 667px) {
+  .albumPop {
+    top: 5%;
+    width: 70%;
+    left: 15%;
+    right: 15%; }
+
+  .albumDetailWrapper .albumText {
+    font-size: 1em; }
+  .albumDetailWrapper .artistText {
+    font-size: .8em; } }
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.5em; }
+
+  .albumPop {
+    width: 80%;
+    left: 10%;
+    right: 10%; }
+
+  .closeButton {
+    margin-left: 93%;
+    font-size: 0.8em; } }
 .recContainer {
   width: 75%;
   box-shadow: 1px 1px 10px #999;

@@ -3,7 +3,7 @@
 }
 .scrollWrapper {
 		@include boxShadow();
-		border-radius: $themeBorderRadius;
+		border-radius: 5px;
     padding-top: 7px;
 	}
 	.scrollbar {
