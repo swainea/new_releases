@@ -26,6 +26,13 @@
   opacity: 0.7;
 }
 
-// @media screen and (max-width: $bp-large){
-//
-// }
+@media screen and (max-width: $bp-medium2){
+  .homeLogo{
+    height: 5em;
+  }
+  .login_button{
+    height: 3.4em;
+    padding: 0.7em;
+    font-size: .6em; 
+  }
+}
