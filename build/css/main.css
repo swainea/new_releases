@@ -360,9 +360,14 @@ textarea {
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
-body {
-  background-image: url("http://i.imgur.com/YafrLLw.jpg");
-  background-repeat: no-repeat;
+html {
+  background: url("http://i.imgur.com/YafrLLw.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  /* Safari and Chrome */
+  -moz-background-size: cover;
+  /* Firefox */
+  -o-background-size: cover;
+  /* Opera */
   background-size: cover; }
 
 h1 {
@@ -372,12 +377,17 @@ h1 {
   color: white;
   opacity: 0.5; }
 
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 .login_button {
   box-shadow: 1px 1px 10px #999;
   background-color: transparent;
   opacity: 0.7;
-  height: 50px;
-  padding: 10px;
+  height: 3em;
+  padding: .8em;
   margin: 0 auto;
   font-family: "Rambla", sans-serif;
   font-weight: 700;
@@ -386,7 +396,7 @@ h1 {
   font-size: 1em;
   color: #6d6d6d;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: .4em;
   outline: none; }
 
 .login_button:hover {
@@ -394,23 +404,15 @@ h1 {
 
 .homeLogo {
   display: block;
-  margin: 0 auto;
-  height: 150px;
-  opacity: 0.7;
-  margin-top: 25%; }
+  height: 9em;
+  opacity: 0.7; }
 
-.titleWrapper {
-  width: 75%;
-  margin: auto;
-  position: relative;
-  margin-top: 10%; }
+.nrWrapper {
+  width: 75%; }
 
 .scrollWrapper {
   box-shadow: 1px 1px 10px #999;
-  width: 75%;
   margin: auto;
-  text-align: center;
-  position: relative;
   border-radius: 5px;
   padding-top: 30px; }
 
@@ -519,7 +521,7 @@ li {
 
 .albumPop {
   position: absolute;
-  top: 10%;
+  top: 20%;
   right: 30%;
   left: 30%;
   width: 40%;
@@ -542,7 +544,39 @@ li {
   outline: none;
   border: none; }
 
-p {
-  color: white; }
+.recContainer {
+  width: 75%;
+  box-shadow: 1px 1px 10px #999;
+  margin: auto;
+  text-align: center; }
+
+.recImgWrapper {
+  box-shadow: 1px 1px 10px #999;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px; }
+
+.backButton {
+  box-shadow: 1px 1px 10px #999;
+  background-color: transparent;
+  opacity: 0.7;
+  height: 3em;
+  padding: .8em;
+  margin: 0 auto;
+  font-family: "Rambla", sans-serif;
+  font-weight: 700;
+  display: block;
+  margin-top: 2%;
+  font-size: 1em;
+  color: #6d6d6d;
+  cursor: pointer;
+  border-radius: .4em;
+  outline: none;
+  margin-bottom: 5%; }
+
+.backButton:hover {
+  opacity: 1; }
 
 /*# sourceMappingURL=main.css.map */

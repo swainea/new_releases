@@ -8,3 +8,10 @@
   text-decoration: none;
   display: inline-block;
 }
+@mixin buttonHoverStyle{
+  opacity: 1;
+}
+@mixin square{
+  height: 150px;
+  width: 150px; 
+}

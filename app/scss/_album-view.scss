@@ -4,7 +4,6 @@
   opacity: 0.7;
   height: 50px;
   padding: 10px;
-  // margin: 0 auto;
   margin-top: 2%;
   font-size: 1em;
   color: #6d6d6d;
@@ -25,7 +24,6 @@
   opacity: 0.7;
   height: 50px;
   padding: 10px;
-  // margin: 0 auto;
   margin-top: 2%;
   font-size: 1em;
   cursor: $themeClickableCursor;
@@ -40,11 +38,11 @@
 }
 
 .recButton:hover{
-  opacity: 1;
+  @include buttonHoverStyle();
 }
 
 .listenButton:hover{
-  opacity:1;
+  @include buttonHoverStyle();
 }
 
 .albumDetailWrapper{
@@ -83,7 +81,7 @@
 
 .albumPop{
   position: absolute;
-  top: 10%;
+  top: 20%;
   right: 30%;
   left: 30%;
   width:40%;

@@ -17,13 +17,15 @@
 }
 
 .login_button:hover {
-  opacity: 1;
+  @include buttonHoverStyle();
 }
 
 .homeLogo {
   display: block;
-  margin: 0 auto;
   height: 9em;
   opacity: 0.7;
-  margin-top: 25%;
 }
+
+// @media screen and (max-width: $bp-large){
+//
+// }

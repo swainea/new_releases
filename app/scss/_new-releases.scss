@@ -1,15 +1,9 @@
-.titleWrapper{
-  @include wrapperWidth();
-  margin: auto;
-  position: relative;
-  margin-top: 10%
+.nrWrapper{
+  @include wrapperWidth;
 }
 .scrollWrapper {
 		@include boxShadow();
-    @include wrapperWidth();
 		margin: auto;
-		text-align: center;
-		position: relative;
 		border-radius: 5px;
 		padding-top: 30px;
 	}

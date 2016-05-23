@@ -13,3 +13,9 @@ h1 {
   color: $themeFontLightest;
   opacity: 0.5;
 }
+
+.main-section{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
