@@ -473,14 +473,13 @@ h1 {
   box-shadow: 1px 1px 10px #999;
   background-color: transparent;
   opacity: 0.7;
-  height: 50px;
-  padding: 10px;
+  height: 3em;
+  padding: .6em;
   margin-top: 2%;
   font-size: 1em;
   color: #6d6d6d;
   cursor: pointer;
-  border-radius: 5px;
-  outline: none; }
+  border-radius: 5px; }
   .listenButton a {
     text-decoration: none;
     text-decoration: none;
@@ -492,13 +491,12 @@ h1 {
   box-shadow: 1px 1px 10px #999;
   background-color: transparent;
   opacity: 0.7;
-  height: 50px;
-  padding: 10px;
+  height: 3em;
+  padding: .6em;
   margin-top: 2%;
   font-size: 1em;
   cursor: pointer;
-  border-radius: 5px;
-  outline: none; }
+  border-radius: 5px; }
   .recButton a {
     text-decoration: none;
     font-family: "Rambla", sans-serif;
@@ -512,10 +510,7 @@ h1 {
   opacity: 1; }
 
 .albumDetailWrapper {
-  width: 75%;
   margin: auto;
-  display: block;
-  position: relative;
   text-align: center; }
   .albumDetailWrapper .albumText {
     color: white;
@@ -529,14 +524,9 @@ h1 {
     font-size: 1.2em; }
 
 .albumCoverDetail {
-  margin: auto;
-  display: block; }
+  margin: auto; }
 
 .buttonWrapper {
-  display: block;
-  width: 75%;
-  margin: auto;
-  position: relative;
   text-align: center;
   padding-bottom: 2em; }
 
@@ -562,7 +552,6 @@ h1 {
   color: white;
   margin-left: 95%;
   cursor: pointer;
-  outline: none;
   border: none; }
 
 .recContainer {

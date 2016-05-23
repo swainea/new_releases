@@ -3,7 +3,7 @@
 }
 .scrollWrapper {
 		@include boxShadow();
-		border-radius: 5px;
+		border-radius: $themeBorderRadius;
     padding-top: 7px;
 	}
 	.scrollbar {
@@ -51,5 +51,4 @@
   .albumCoverImg{
     margin-right: auto;
   }
-
 }

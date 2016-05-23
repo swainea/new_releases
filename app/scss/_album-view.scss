@@ -2,14 +2,13 @@
   @include boxShadow();
   background-color: transparent;
   opacity: 0.7;
-  height: 50px;
-  padding: 10px;
+  height: 3em;
+  padding: .6em;
   margin-top: 2%;
   font-size: 1em;
   color: #6d6d6d;
   cursor: $themeClickableCursor;
-  border-radius: 5px;
-  outline: none;
+  border-radius: $themeBorderRadius;
     a{
       text-decoration: none;
       text-decoration: none;
@@ -22,13 +21,12 @@
   @include boxShadow();
   background-color: transparent;
   opacity: 0.7;
-  height: 50px;
-  padding: 10px;
+  height: 3em;
+  padding: .6em;
   margin-top: 2%;
   font-size: 1em;
   cursor: $themeClickableCursor;
-  border-radius: 5px;
-  outline: none;
+  border-radius: $themeBorderRadius;
     a {
       text-decoration: none;
       font-family: $themeFont;
@@ -46,10 +44,7 @@
 }
 
 .albumDetailWrapper{
-  width: 75%;
   margin: auto;
-  display: block;
-  position: relative;
   text-align: center;
   .albumText{
     color: $themeFontLightest;
@@ -67,14 +62,9 @@
 }
 .albumCoverDetail{
   margin: auto;
-  display: block;
 }
 
 .buttonWrapper{
-  display: block;
-  width:75%;
-  margin: auto;
-  position: relative;
   text-align: center;
   padding-bottom: 2em;
 }
@@ -102,6 +92,5 @@
   color: $themeFontLightest;
   margin-left: 95%;
   cursor: $themeClickableCursor;
-  outline: none;
   border: none;
 }
