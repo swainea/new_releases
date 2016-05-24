@@ -13,7 +13,6 @@
     }
 
     function fixSizeLink(){
-      console.log('setting up resize handler');
       window.addEventListener('resize', changeTotalHeight);
       function changeTotalHeight() {
         $('.main-section').css('height', window.innerHeight + 'px');
