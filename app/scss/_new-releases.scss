@@ -5,6 +5,9 @@
 		@include boxShadow();
 		border-radius: 5px;
     padding-top: 7px;
+    ul{
+      padding: 0;
+    }
 	}
 	.scrollbar {
 		overflow: auto;
@@ -41,7 +44,6 @@
     height: 21em;
   }
 }
-
 @media screen and (max-width: $bp-medium2){
   .albumArt{
     clear:left;
