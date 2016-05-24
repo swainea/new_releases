@@ -1,17 +1,11 @@
+.recArtists{
+  @include wrapperWidth;
+}
 .recContainer{
-  @include wrapperWidth();
   @include boxShadow();
-  margin: auto;
   text-align: center;
 }
 
-.recImgWrapper{
-  @include boxShadow();
-  @include square();
-  background-size:cover;
-  background-repeat:no-repeat;
-  margin: 10px;
-}
 
 .backButton {
   @include boxShadow();
@@ -34,4 +28,19 @@
 
 .backButton:hover{
   @include buttonHoverStyle();
+}
+
+.recArtistList{
+  padding: 0;
+  li{
+    display: inline;
+  }
+  a {
+    @include boxShadow();
+    @include square();
+    background-size:cover;
+    background-repeat:no-repeat;
+    margin: 10px;
+    display: inline-block;
+  }
 }
