@@ -5,8 +5,6 @@
   @include boxShadow();
   text-align: center;
 }
-
-
 .backButton {
   @include boxShadow();
   background-color: transparent;
@@ -25,11 +23,9 @@
   outline: none;
   margin-bottom: 5%;
 }
-
 .backButton:hover{
   @include buttonHoverStyle();
 }
-
 .recArtistList{
   padding: 0;
   li{
