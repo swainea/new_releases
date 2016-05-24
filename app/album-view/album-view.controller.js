@@ -11,6 +11,7 @@
     var that = this;
     this.album = $stateParams.album;
     this.artistData = [];
+    this.errorMessage = "";
 
     this.init = function init(){
       if(this.album === null){
@@ -21,6 +22,9 @@
           .then(function ( response ){
             console.log("response: ", response);
             that.artistData = response;
+          })
+          .catch(function onError( response ){
+            that.errorMessage = "Unable to process request. Please try again.";
           });
       }
     };
