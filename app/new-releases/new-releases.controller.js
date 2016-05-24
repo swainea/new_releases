@@ -14,7 +14,6 @@
 
     this.init = function init(){
       if (!localStorage.getItem("access_token")){
-        // I need to pass an error message as a state param into the login
         $state.go('home', {'errMsg': "Please Login First"} );
 
       } else {
@@ -23,8 +22,13 @@
         .then(function ( response ){
           that.albumData =  response;
         })
-        .catch(function onError ( reponse ){
-          that.errorMessage = "Unable to process request. Please try again.";
+        .catch(function onError ( response ){
+          console.log(response);
+          if (response === "You must authorize with Spotify to continue"){
+            that.errorMessage = "You must authorize with Spotify to continue";
+          } else {
+            that.errorMessage = "Unable to process request. Please try again.";
+          }
         });
       }
     };

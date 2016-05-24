@@ -16,9 +16,7 @@
     };
 
     function getNewReleases ( access_token ){
-      // console.log("access_token: ", access_token);
-      // access_token = 0;
-      if (typeof access_token === 'string'){
+      if (typeof access_token === "string"){
 
         return $http ({
           method: 'GET',
