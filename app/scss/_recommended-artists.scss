@@ -4,6 +4,8 @@
 .recContainer{
   @include boxShadow();
   text-align: center;
+  max-height: 24em;
+  overflow: auto;
 }
 .backButton {
   @include boxShadow();
@@ -33,10 +35,41 @@
   }
   a {
     @include boxShadow();
-    @include square();
+    @include square(150px);
     background-size:cover;
     background-repeat:no-repeat;
     margin: 10px;
     display: inline-block;
+  }
+}
+
+@media screen and (max-width: $bp-medium2){
+ .recArtistList{
+   a{
+     @include square(100px);
+   }
+ }
+ .recArtists{
+   h1{
+     font-size: 1.5em;
+   }
+ }
+ .backButton{
+   font-size: .8em;
+ }
+}
+@media screen and (max-width: $bp-small){
+  .recArtistList {
+    a{
+      @include square(75px);
+    }
+  }
+  .backButton{
+    font-size: .7em;
+  }
+  .recArtists{
+    h1{
+      font-size: 1.2em;
+    }
   }
 }
