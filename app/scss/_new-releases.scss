@@ -54,3 +54,8 @@
     margin-right: auto;
   }
 }
+@media screen and (max-width: $bp-small){
+  h1{
+    font-size: 1.5em; 
+  }
+}
