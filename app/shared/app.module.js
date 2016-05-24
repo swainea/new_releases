@@ -16,7 +16,7 @@
       url: '/',
       templateUrl: 'home/home.template.html',
       params: {
-        errMsg: null // this is the default value
+        errMsg: null
       }
     })
     .state('new-releases',{
