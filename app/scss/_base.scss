@@ -19,3 +19,9 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+.err-msg{
+  font-family: $themeFont;
+  font-weight: $themeFontWeight; 
+  color: red;
+}
