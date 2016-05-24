@@ -14,7 +14,10 @@
     $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'home/home.template.html'
+      templateUrl: 'home/home.template.html',
+      params: {
+        errMsg: null // this is the default value
+      }
     })
     .state('new-releases',{
       url: '/new-releases',
