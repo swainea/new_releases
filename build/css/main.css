@@ -641,9 +641,10 @@ h1 {
   opacity: 1; }
 
 .recArtistList {
+  list-style: none;
   padding: 0; }
   .recArtistList li {
-    display: inline; }
+    float: left; }
   .recArtistList a {
     box-shadow: 1px 1px 10px #999;
     width: 150px;
@@ -654,19 +655,24 @@ h1 {
     display: inline-block;
     text-decoration: none; }
 
-.hoverBox:hover {
-  width: 100%;
-  height: 100%;
+.hoverBox {
+  display: none;
   position: relative;
+  width: 100%;
+  height: 100%; }
+
+.recArtistList a:hover .hoverBox {
   border: 1px solid red;
   background-color: black;
-  opacity: 0.8; }
-  .hoverBox:hover p {
-    display: block;
+  opacity: 0.8;
+  display: block; }
+  .recArtistList a:hover .hoverBox p {
     text-align: center;
     color: white;
     font-family: "Rambla", sans-serif;
-    font-weight: 700; }
+    font-weight: 700;
+    margin: 0;
+    padding-top: 1em; }
 
 @media screen and (max-width: 667px) {
   .recArtistList a {
