@@ -361,7 +361,7 @@ textarea {
   -webkit-appearance: none; }
 
 html {
-  background: url("http://i.imgur.com/YafrLLw.jpg") no-repeat center center fixed;
+  background: url("/images/fpBackground.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   /* Safari and Chrome */
   -moz-background-size: cover;
@@ -616,7 +616,7 @@ h1 {
 .recContainer {
   box-shadow: 1px 1px 10px #999;
   text-align: center;
-  max-height: 24em;
+  max-height: 34em;
   overflow: auto; }
 
 .backButton {
@@ -642,39 +642,43 @@ h1 {
 
 .recArtistList {
   list-style: none;
-  padding: 0; }
+  padding: 0;
+  text-align: center; }
   .recArtistList li {
-    float: left; }
-  .recArtistList a {
-    box-shadow: 1px 1px 10px #999;
+    display: inline-block;
+    position: relative;
+    margin: 10px;
     width: 150px;
     height: 150px;
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 10px;
-    display: inline-block;
-    text-decoration: none; }
-
-.hoverBox {
-  display: none;
-  position: relative;
-  width: 100%;
-  height: 100%; }
-
-.recArtistList a:hover .hoverBox {
-  border: 1px solid red;
-  background-color: black;
-  opacity: 0.8;
-  display: block; }
-  .recArtistList a:hover .hoverBox p {
+    box-shadow: 1px 1px 10px #999; }
+    .recArtistList li:hover a {
+      display: block; }
+  .recArtistList a {
+    display: none;
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding-top: 1em;
+    background-color: black;
+    opacity: 0.8;
     text-align: center;
     color: white;
     font-family: "Rambla", sans-serif;
     font-weight: 700;
-    margin: 0;
-    padding-top: 1em; }
+    position: absolute;
+    top: 0;
+    left: 0; }
 
+@media screen and (max-width: 768px) {
+  .recContainer {
+    max-height: 28em; } }
 @media screen and (max-width: 667px) {
+  .recArtistList li {
+    width: 100px;
+    height: 100px; }
   .recArtistList a {
     width: 100px;
     height: 100px; }
@@ -683,8 +687,14 @@ h1 {
     font-size: 1.5em; }
 
   .backButton {
-    font-size: .8em; } }
+    font-size: .8em; }
+
+  .recContainer {
+    max-height: 24em; } }
 @media screen and (max-width: 400px) {
+  .recArtistList li {
+    width: 75px;
+    height: 75px; }
   .recArtistList a {
     width: 75px;
     height: 75px; }
@@ -693,6 +703,9 @@ h1 {
     font-size: .7em; }
 
   .recArtists h1 {
-    font-size: 1.2em; } }
+    font-size: 1.2em; }
+
+  .recContainer {
+    max-height: 20em; } }
 
 /*# sourceMappingURL=main.css.map */

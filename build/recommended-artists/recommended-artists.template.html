@@ -2,12 +2,10 @@
   <h1>RECOMMENDED ARTISTS</h1>
   <p class= "err-msg" ng-show="ra.errorMessage">{{ra.errorMessage}}</p>
   <div class="recContainer" ng-init="ra.init()">
-      <ul class="recArtistList">
-        <li ng-repeat="artistDetail in ra.recs">
-          <a ng-href="{{artistDetail.external_urls.spotify}}" ng-style="{'background-image':'url({{artistDetail.images[1].url}})'}">
-            <div class="hoverBox">
-              <p>{{artistDetail.name}}</p>
-            </div>
+      <ul class="recArtistList" ng-init="ra.init()">
+        <li ng-repeat="artistDetail in ra.recs" ng-style="{'background-image':'url({{artistDetail.images[1].url}})'}">
+          <a ng-href="{{artistDetail.external_urls.spotify}}">
+            {{artistDetail.name}}
           </a>
         </li>
       </ul>
