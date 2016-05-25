@@ -66,7 +66,7 @@
 
 @media screen and (max-width: $bp-medium){
   .recContainer{
-    max-height: 28em; 
+    max-height: 28em;
   }
 }
 @media screen and (max-width: $bp-medium2){
@@ -97,6 +97,7 @@
     }
     a{
       @include square(75px);
+      font-size: 0.8em; 
     }
   }
   .backButton{
@@ -108,6 +109,6 @@
     }
   }
   .recContainer{
-    max-height: 20em;
+    max-height: 26em;
   }
 }

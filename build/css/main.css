@@ -605,7 +605,8 @@ h1 {
   .albumPop {
     width: 80%;
     left: 10%;
-    right: 10%; }
+    right: 10%;
+    top: 18%; }
 
   .closeButton {
     margin-left: 93%;
@@ -697,7 +698,8 @@ h1 {
     height: 75px; }
   .recArtistList a {
     width: 75px;
-    height: 75px; }
+    height: 75px;
+    font-size: 0.8em; }
 
   .backButton {
     font-size: .7em; }
@@ -706,6 +708,6 @@ h1 {
     font-size: 1.2em; }
 
   .recContainer {
-    max-height: 20em; } }
+    max-height: 26em; } }
 
 /*# sourceMappingURL=main.css.map */
