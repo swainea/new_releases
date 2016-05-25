@@ -1,4 +1,5 @@
-<section class="loginWrapper">
+<section class="loginWrapper" ng-controller="LoginController as lc">
   <img class="homeLogo" src="http://i.imgur.com/furcQIH.png">
-  <button ng-controller="LoginController as lc" ng-click="lc.oAuth()" type="button" class="login_button">LOGIN WITH SPOTIFY</button>
+  <button ng-click="lc.oAuth()" type="button" class="login_button">LOGIN WITH SPOTIFY</button>
+  <p class="err-msg" ng-show="lc.errMsg">{{lc.errMsg}}</p>
 </section>

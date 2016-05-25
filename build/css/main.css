@@ -382,6 +382,14 @@ h1 {
   justify-content: center;
   align-items: center; }
 
+.err-msg {
+  font-family: "Rambla", sans-serif;
+  font-weight: 700;
+  color: red; }
+
+.loginWrapper p {
+  text-align: center; }
+
 .login_button {
   box-shadow: 1px 1px 10px #999;
   background-color: transparent;
@@ -422,6 +430,8 @@ h1 {
   box-shadow: 1px 1px 10px #999;
   border-radius: 5px;
   padding-top: 7px; }
+  .scrollWrapper ul {
+    padding: 0; }
 
 .scrollbar {
   overflow: auto;
@@ -469,6 +479,9 @@ h1 {
 
   .albumCoverImg {
     margin-right: auto; } }
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.5em; } }
 .listenButton {
   box-shadow: 1px 1px 10px #999;
   background-color: transparent;
@@ -590,9 +603,6 @@ h1 {
   .albumDetailWrapper .artistText {
     font-size: .8em; } }
 @media screen and (max-width: 400px) {
-  h1 {
-    font-size: 1.5em; }
-
   .albumPop {
     width: 80%;
     left: 10%;
@@ -601,19 +611,14 @@ h1 {
   .closeButton {
     margin-left: 93%;
     font-size: 0.8em; } }
-.recContainer {
-  width: 75%;
-  box-shadow: 1px 1px 10px #999;
-  margin: auto;
-  text-align: center; }
+.recArtists {
+  width: 75%; }
 
-.recImgWrapper {
+.recContainer {
   box-shadow: 1px 1px 10px #999;
-  height: 150px;
-  width: 150px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 10px; }
+  text-align: center;
+  max-height: 24em;
+  overflow: auto; }
 
 .backButton {
   box-shadow: 1px 1px 10px #999;
@@ -635,5 +640,45 @@ h1 {
 
 .backButton:hover {
   opacity: 1; }
+
+.recArtistList {
+  padding: 0; }
+  .recArtistList li {
+    display: inline; }
+  .recArtistList a {
+    box-shadow: 1px 1px 10px #999;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+    display: inline-block; }
+
+.hoverBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 1px solid red; }
+
+@media screen and (max-width: 667px) {
+  .recArtistList a {
+    width: 100px;
+    height: 100px; }
+
+  .recArtists h1 {
+    font-size: 1.5em; }
+
+  .backButton {
+    font-size: .8em; } }
+@media screen and (max-width: 400px) {
+  .recArtistList a {
+    width: 75px;
+    height: 75px; }
+
+  .backButton {
+    font-size: .7em; }
+
+  .recArtists h1 {
+    font-size: 1.2em; } }
 
 /*# sourceMappingURL=main.css.map */

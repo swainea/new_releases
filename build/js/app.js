@@ -14,7 +14,10 @@
     $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'home/home.template.html'
+      templateUrl: 'home/home.template.html',
+      params: {
+        errMsg: null
+      }
     })
     .state('new-releases',{
       url: '/new-releases',
@@ -93,6 +96,7 @@
     var that = this;
     this.album = $stateParams.album;
     this.artistData = [];
+    this.errorMessage = "";
 
     this.init = function init(){
       if(this.album === null){
@@ -103,6 +107,9 @@
           .then(function ( response ){
             console.log("response: ", response);
             that.artistData = response;
+          })
+          .catch(function onError( response ){
+            that.errorMessage = "Unable to process request. Please try again.";
           });
       }
     };
@@ -119,9 +126,14 @@
     .module('app')
     .controller('LoginController', LoginController);
 
-  function LoginController(){
+  LoginController.$inject = ['$stateParams'];
+
+  function LoginController($stateParams){
+    this.errMsg = $stateParams.errMsg;
+    console.log("errMsg: ", this.errMsg);
 
     this.oAuth = function oAuth (){
+
       var client_id = '76448191f52d4674a641b52162d19c85';
       var redirect_uri = 'http://127.0.0.1:3000';
 
@@ -156,28 +168,21 @@
 
     this.init = function init(){
       if (!localStorage.getItem("access_token")){
-
-        $state.go('home');
-
-        var deferred = $q.defer();
-        deferred.reject('You must authorize with Spotify to continue');
-        console.log('Reject: ', deferred.promise);
-        return deferred.promise;
+        $state.go('home', {'errMsg': "Please Login First"} );
 
       } else {
 
       return SpotifyService.getNewReleases(localStorage.getItem("access_token"))
         .then(function ( response ){
-          // console.log("response: ", response);
           that.albumData =  response;
-
-          console.log("that.albumData: ", that.albumData);
-          // console.log("images: ", that.albumData[0].images[0].url);
-          // console.log("link to spotify: ", that.albumData[0].external_urls.spotify);
         })
-        .catch(function onError ( reponse ){
-          console.log ('error response: ', response );
-          that.errorMessage = "Unable to process request. Please try again.";
+        .catch(function onError ( response ){
+          console.log(response);
+          if (response === "You must authorize with Spotify to continue"){
+            that.errorMessage = "You must authorize with Spotify to continue";
+          } else {
+            that.errorMessage = "Unable to process request. Please try again.";
+          }
         });
       }
     };
@@ -200,20 +205,23 @@
     var that = this;
     this.id = $stateParams.id;
     this.recs = [];
+    this.errorMessage = "";
 
     this.init = function init(){
-
         SpotifyService.getRecommendedArtists( this.id )
-          .then(function (response){
+          .then(function ( response ){
             console.log('recs response: ', response);
             that.recs = response;
+          })
+          .catch(function onError ( response ){
+            that.errorMessage = "Unable to process request. Please try again.";
           });
     };
 
     this.back = function back(){
       $state.go('new-releases');
     };
-    
+
 }
 }());
 ;(function() {
@@ -231,7 +239,6 @@
     }
 
     function fixSizeLink(){
-      console.log('setting up resize handler');
       window.addEventListener('resize', changeTotalHeight);
       function changeTotalHeight() {
         $('.main-section').css('height', window.innerHeight + 'px');
@@ -258,9 +265,7 @@
     };
 
     function getNewReleases ( access_token ){
-      // console.log("access_token: ", access_token);
-      // access_token = 0;
-      if (typeof access_token === 'string'){
+      if (typeof access_token === "string"){
 
         return $http ({
           method: 'GET',
