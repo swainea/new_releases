@@ -544,7 +544,7 @@ h1 {
 
 .albumPop {
   position: absolute;
-  top: 20%;
+  top: 15%;
   right: 30%;
   left: 30%;
   width: 40%;
@@ -606,7 +606,7 @@ h1 {
     width: 80%;
     left: 10%;
     right: 10%;
-    top: 18%; }
+    top: 21%; }
 
   .closeButton {
     margin-left: 93%;
