@@ -9,17 +9,17 @@ To use DROP the user must have a Spotify account or authorize Spotify to use you
 The user interface is simple, visual, and straightforward.
 Here is a brief demo:
 
-<img class="readMe" src="http://i.imgur.com/LqllKEk.gifv"/>
+![demo](http://i.imgur.com/LqllKEk.gifv)
 
 Check out DROP live at: [DROP](https://dropthemic.herokuapp.com)
 
 ## The Tech Stack
 
-Framework: [AngularJS](https://angularjs.org/)
-Preprocessor: [Sass](http://sass-lang.com/)
-Build Process: [Grunt](http://gruntjs.com/)
-Libraries: [jQuery](https://jquery.com/)
-Testing: [Mocha](https://mochajs.org/), [Chai](http://chaijs.com/), and [Karma](https://karma-runner.github.io/0.13/index.html)
+* Framework: [AngularJS](https://angularjs.org/)
+* Preprocessor: [Sass](http://sass-lang.com/)
+* Build Process: [Grunt](http://gruntjs.com/)
+* Libraries: [jQuery](https://jquery.com/)
+* Testing: [Mocha](https://mochajs.org/), [Chai](http://chaijs.com/), and [Karma](https://karma-runner.github.io/0.13/index.html)
 
 
 ## Contributing
