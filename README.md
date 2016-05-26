@@ -9,7 +9,7 @@ To use DROP the user must have a Spotify account or authorize Spotify to use you
 The user interface is simple, visual, and straightforward.
 Here is a brief demo:
 
-![demo](/images/DROPreadme.gif)
+![demo](app/images/DROPreadme.gif)
 
 Check out DROP live at: [DROP](https://dropthemic.herokuapp.com)
 
