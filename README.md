@@ -6,7 +6,10 @@ DROP is an application for discovering new albums, tracks, and artists available
 
 To use DROP the user must have a Spotify account or authorize Spotify to use your Facebook credentials.
 
-<insert licecap here>
+The user interface is simple, visual, and straightforward.
+Here is a brief demo:
+
+<img class="readMe" src="http://i.imgur.com/LqllKEk.gifv"/>
 
 Check out DROP live at: [DROP](https://dropthemic.herokuapp.com)
 

@@ -387,6 +387,9 @@ h1 {
   font-weight: 700;
   color: red; }
 
+.readMe {
+  align: center; }
+
 .loginWrapper p {
   text-align: center; }
 
